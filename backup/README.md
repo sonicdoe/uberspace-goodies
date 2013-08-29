@@ -14,7 +14,13 @@ $ ./uberspace-backup.sh
 will read all Uberspace accounts from `~/.ssh/config` and perform a backup to
 `~/uberspace-backups`.
 
-## Command line arguments
+Here’s a more advanced example (using all possible [command line arguments](#arguments)):
+
+```shell
+$ ./uberspace-backup.sh -h uberspace-johndoe -h uberspace-galaxy -b ~/backups -s /etc/ssh/ssh_config
+```
+
+## Command line arguments [arguments]
 
 ### -b *backup-dir*
 
