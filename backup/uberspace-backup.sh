@@ -88,7 +88,7 @@ run_backup() {
 
 		echo "• Dumping MySQL databases"
 		mkdir -p "${BACKUP_DIR}/mysqlbackup/$UBERSPACE/"
-		ssh $HOST "mysqldump --compact --comments --dump-date --quick --all-databases | xz" > "${BACKUP_DIR}/mysqlbackup/$UBERSPACE/all-databases.sql.xz" && echo "✔ Dumped MySQL databases"
+		ssh $HOST "mysqldump --compact --comments --dump-date --single-transaction --quick --all-databases | xz" > "${BACKUP_DIR}/mysqlbackup/$UBERSPACE/all-databases.sql.xz" && echo "✔ Dumped MySQL databases"
 
 		echo
 	done
