@@ -71,7 +71,7 @@ run_backup() {
 			# Sync with rsync
 			echo "• Syncing /home/$UBERSPACE"
 			mkdir -p "${BACKUP_DIR}/home/$UBERSPACE/"
-			rsync -aPz $HOST:/home/$UBERSPACE/ "${BACKUP_DIR}/home/$UBERSPACE/" && echo "✔ Synced /home/$UBERSPACE"
+			rsync -aPz --delete $HOST:/home/$UBERSPACE/ "${BACKUP_DIR}/home/$UBERSPACE/" && echo "✔ Synced /home/$UBERSPACE"
 		fi
 
 		if  $ARCHIVE; then
@@ -83,7 +83,7 @@ run_backup() {
 			# Sync with rsync		
 			echo "• Syncing /var/www/virtual/$UBERSPACE"
 			mkdir -p "${BACKUP_DIR}/var/www/virtual/$UBERSPACE/"
-			rsync -aPz $HOST:/var/www/virtual/$UBERSPACE/ "${BACKUP_DIR}/var/www/virtual/$UBERSPACE/" && echo "✔ Synced /var/www/virtual/$UBERSPACE"
+			rsync -aPz --delete $HOST:/var/www/virtual/$UBERSPACE/ "${BACKUP_DIR}/var/www/virtual/$UBERSPACE/" && echo "✔ Synced /var/www/virtual/$UBERSPACE"
 		fi
 
 		echo "• Dumping MySQL databases"
