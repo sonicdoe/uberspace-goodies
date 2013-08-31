@@ -20,9 +20,16 @@ Here’s a more advanced example (using all possible [command line arguments](#a
 $ ./uberspace-backup.sh -a -h uberspace-johndoe -h uberspace-galaxy -b ~/backups -s /etc/ssh/ssh_config
 ```
 
+---
+
+**Note**: Unless you run `uberspace-backup.sh` in [archive mode](#archive-argument)
+only a mirror of your Uberspace will be created. In plain English this means it
+creates an “Aaa, Uberspace lost all my files!” kinda backup but not an “I
+accidentally deleted a file three months ago” kinda backup.
+
 ## Command line arguments [arguments]
 
-### -a
+### -a [archive-argument]
 
 Create a local .tar.bz2-archive instead of syncing all files incrementally (placed into `~/uberspace-backups/archives`).
 
