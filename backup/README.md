@@ -17,10 +17,14 @@ will read all Uberspace accounts from `~/.ssh/config` and perform a backup to
 Here’s a more advanced example (using all possible [command line arguments](#arguments)):
 
 ```shell
-$ ./uberspace-backup.sh -h uberspace-johndoe -h uberspace-galaxy -b ~/backups -s /etc/ssh/ssh_config
+$ ./uberspace-backup.sh -a -h uberspace-johndoe -h uberspace-galaxy -b ~/backups -s /etc/ssh/ssh_config
 ```
 
 ## Command line arguments [arguments]
+
+### -a
+
+Create a local .tar.bz2-archive instead of syncing all files incrementally (placed into `~/uberspace-backups/archives`).
 
 ### -b *backup-dir*
 
